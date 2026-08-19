@@ -1,0 +1,34 @@
+pkgname=visual-studio-code-bin
+_pkgname=visual-studio-code
+pkgver=1.134.0
+pkgrel=1
+pkgdesc="Visual Studio Code (official binary version)"
+arch=('x86_64')
+url="https://code.visualstudio.com/"
+license=('custom:commercial')
+provides=('code' 'vscode')
+conflicts=('code')
+options=('!strip')
+depends=('libxkbfile' 'gnupg' 'gtk3' 'libsecret' 'nss' 'gcc-libs'
+         'libnotify' 'libxss' 'glibc' 'lsof' 'shared-mime-info'
+         'xdg-utils' 'alsa-lib')
+optdepends=('glib2: move files to trash'
+            'libdbusmenu-glib: KDE global menu'
+            'org.freedesktop.secrets: settings sync'
+            'icu69: Live Share')
+source=("${_pkgname}-bin.sh")
+source_x86_64=("code_${pkgver}_amd64.deb::https://update.code.visualstudio.com/${pkgver}/linux-deb-x64/stable")
+sha256sums=('6b0eaa5d267dfda152050e203bf8567e5ba36be575a9b31243498978f357f5bb')
+sha256sums_x86_64=('dcd3a2f52d53df079cd389662ff1fdbeb629938331d3a63655fed929f8d49f19')
+
+package() {
+    bsdtar -xf data.tar.xz -C "$pkgdir/"
+    install -d "$pkgdir/usr/bin" "$pkgdir/usr/share/licenses/$pkgname"
+    ln -s /usr/share/code/resources/app/LICENSE.rtf \
+        "$pkgdir/usr/share/licenses/$pkgname/LICENSE.rtf"
+    install -m755 "${_pkgname}-bin.sh" "$pkgdir/usr/bin/code"
+
+    sed -i 's/^\(Exec=\)[^ ]*/\1code/g' \
+        "$pkgdir"/usr/share/applications/*.desktop
+    chmod u-s "$pkgdir/usr/share/code/chrome-sandbox"
+}
