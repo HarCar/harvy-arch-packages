@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Antigravity
+Comment=Google Antigravity — plataforma agéntica de desarrollo
+Exec=/usr/bin/antigravity %U
+Icon=antigravity
+Type=Application
+Categories=Development;
+Terminal=false

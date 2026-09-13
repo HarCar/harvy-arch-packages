@@ -1,0 +1,36 @@
+# Maintainer: Harvy
+pkgname=antigravity
+pkgver=2.13.0
+_buildid=6362815968182272
+pkgrel=1
+pkgdesc="Google Antigravity 2.0 — plataforma agéntica de desarrollo (Hub)"
+arch=('x86_64')
+url="https://antigravity.google"
+license=('custom:proprietary')
+depends=(
+  'gtk3' 'nss' 'alsa-lib' 'libxss' 'libxtst' 'libxcomposite' 'libxdamage'
+  'libxrandr' 'libxkbcommon' 'at-spi2-core' 'cairo' 'pango' 'cups'
+  'dbus' 'expat' 'glib2' 'mesa' 'hicolor-icon-theme'
+)
+options=('!strip')
+source=("${pkgname}-${pkgver}.tar.gz::https://storage.googleapis.com/antigravity-public/antigravity-hub/${pkgver}-${_buildid}/linux-x64/Antigravity.tar.gz"
+        "${pkgname}.desktop")
+sha256sums=('a47a2434d920008792f3ce43ef502d486c326d2098082590831800b5b093f643'
+            '70447c4b0ae114ac6bc2302d8669022437a6e77e8f25ea96be0ca01e573689c1')
+
+package() {
+  install -d "$pkgdir/opt/antigravity"
+  # Si el tar.gz trae una sola carpeta contenedora (ver nota abajo),
+  # cambiá esta línea por: cp -a "$srcdir"/*/. "$pkgdir/opt/antigravity/"
+  # cp -a "$srcdir/." "$pkgdir/opt/antigravity/"
+  # rm -f "$pkgdir/opt/antigravity/${pkgname}.desktop"
+  cp -a "$srcdir"/*/. "$pkgdir/opt/antigravity/"
+
+  chmod 4755 "$pkgdir/opt/antigravity/chrome-sandbox"
+
+  install -d "$pkgdir/usr/bin"
+  ln -s /opt/antigravity/antigravity "$pkgdir/usr/bin/antigravity"
+
+  install -Dm644 "$srcdir/${pkgname}.desktop" \
+    "$pkgdir/usr/share/applications/${pkgname}.desktop"
+}

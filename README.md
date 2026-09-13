@@ -2,6 +2,7 @@
 
 Personal Arch Linux `PKGBUILD` recipes for `x86_64`:
 
+- `antigravity`
 - `google-chrome`
 - `visual-studio-code-bin`
 
