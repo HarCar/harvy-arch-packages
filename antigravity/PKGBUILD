@@ -1,7 +1,7 @@
 # Maintainer: Harvy
 pkgname=antigravity
-pkgver=2.15.0
-_buildid=6576870427328512
+pkgver=2.17.0
+_buildid=5217732355031040
 pkgrel=1
 pkgdesc="Google Antigravity 2.0 — plataforma agéntica de desarrollo (Hub)"
 arch=('x86_64')
@@ -15,7 +15,7 @@ depends=(
 options=('!strip')
 source=("${pkgname}-${pkgver}.tar.gz::https://storage.googleapis.com/antigravity-public/antigravity-hub/${pkgver}-${_buildid}/linux-x64/Antigravity.tar.gz"
         "${pkgname}.desktop")
-sha256sums=('25aa80f2dfcf326cfac97441c692e67c70b05bac0a6a8d7df3582e93480c82e0'
+sha256sums=('6a9b0ff60f7bd0d165022034aad9b047b3b0cf2ac56134feded8e68760e2ab01'
             '70447c4b0ae114ac6bc2302d8669022437a6e77e8f25ea96be0ca01e573689c1')
 
 package() {
