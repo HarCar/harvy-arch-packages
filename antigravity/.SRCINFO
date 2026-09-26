@@ -1,6 +1,6 @@
 pkgbase = antigravity
 	pkgdesc = Google Antigravity 2.0 — plataforma agéntica de desarrollo (Hub)
-	pkgver = 2.13.0
+	pkgver = 2.15.0
 	pkgrel = 1
 	url = https://antigravity.google
 	arch = x86_64
@@ -24,9 +24,9 @@ pkgbase = antigravity
 	depends = mesa
 	depends = hicolor-icon-theme
 	options = !strip
-	source = antigravity-2.13.0.tar.gz::https://storage.googleapis.com/antigravity-public/antigravity-hub/2.13.0-6362815968182272/linux-x64/Antigravity.tar.gz
+	source = antigravity-2.15.0.tar.gz::https://storage.googleapis.com/antigravity-public/antigravity-hub/2.15.0-6576870427328512/linux-x64/Antigravity.tar.gz
 	source = antigravity.desktop
-	sha256sums = a47a2434d920008792f3ce43ef502d486c326d2098082590831800b5b093f643
+	sha256sums = 25aa80f2dfcf326cfac97441c692e67c70b05bac0a6a8d7df3582e93480c82e0
 	sha256sums = 70447c4b0ae114ac6bc2302d8669022437a6e77e8f25ea96be0ca01e573689c1
 
 pkgname = antigravity
