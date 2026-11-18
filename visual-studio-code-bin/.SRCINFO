@@ -1,6 +1,6 @@
 pkgbase = visual-studio-code-bin
 	pkgdesc = Visual Studio Code (official binary version)
-	pkgver = 1.139.1
+	pkgver = 1.147.0
 	pkgrel = 1
 	url = https://code.visualstudio.com/
 	arch = x86_64
@@ -28,7 +28,7 @@ pkgbase = visual-studio-code-bin
 	options = !strip
 	source = visual-studio-code-bin.sh
 	sha256sums = 6b0eaa5d267dfda152050e203bf8567e5ba36be575a9b31243498978f357f5bb
-	source_x86_64 = code_1.139.1_amd64.deb::https://update.code.visualstudio.com/1.139.1/linux-deb-x64/stable
-	sha256sums_x86_64 = cc8e35cf69ff4c7e515e19fa981bf6aba41f61ddb61c79370e9fe460c5dbaf8b
+	source_x86_64 = code_1.147.0_amd64.deb::https://update.code.visualstudio.com/1.147.0/linux-deb-x64/stable
+	sha256sums_x86_64 = 749efcdf5008a8323d76773b836199cdecf708fdb993f0f0544d9475176837ab
 
 pkgname = visual-studio-code-bin
